@@ -1,0 +1,578 @@
+
+  node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.d.ts:120:     * Generates email links and OTPs to be sent via a custom email provider.
+  node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.d.ts:121:     * @param email The user's email.
+> node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.d.ts:122:     * @param options.password User password. For signup only.
+> node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.d.ts:123:     * @param options.data Optional user metadata. For signup only.
+  node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.d.ts:124:     * @param options.redirectTo The redirect url which should be appended to the generated link
+  node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.d.ts:125:     *
+  node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.d.ts:127:     *
+  node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.d.ts:128:     * @remarks
+> node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.d.ts:129:     * - The following types can be passed into `generateLink()`: `signup`, `magiclink`, `invite`, `recovery`, `email_change_current`, `email_change_new`, `phone_change`.
+  node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.d.ts:130:     * - `generateLink()` only generates the email link for `email_change_email` if the **Secure email change** is enabled in your project's [email auth provider settings](/dashboard/project/_/auth/providers).
+> node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.d.ts:131:     * - `generateLink()` handles the creation of the user for `signup`, `invite` and `magiclink`.
+  node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.d.ts:132:     *
+> node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.d.ts:133:     * @example Generate a signup link
+  node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.d.ts:134:     * ```js
+  node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.d.ts:135:     * const { data, error } = await supabase.auth.admin.generateLink({
+> node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.d.ts:136:     *   type: 'signup',
+  node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.d.ts:137:     *   email: 'email@example.com',
+  node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.d.ts:138:     *   password: 'secret'
+  node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.d.ts:140:     * ```
+  node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.d.ts:141:     *
+> node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.d.ts:142:     * @exampleResponse Generate a signup link
+  node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.d.ts:143:     * ```json
+  node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.d.ts:144:     * {
+  node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.d.ts:149:     *       "hashed_token": "<HASHED_TOKEN",
+  node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.d.ts:150:     *       "redirect_to": "<REDIRECT_URL>",
+> node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.d.ts:151:     *       "verification_type": "signup"
+  node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.d.ts:152:     *     },
+  node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.d.ts:153:     *     "user": {
+  node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.js:152:     * Generates email links and OTPs to be sent via a custom email provider.
+  node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.js:153:     * @param email The user's email.
+> node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.js:154:     * @param options.password User password. For signup only.
+> node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.js:155:     * @param options.data Optional user metadata. For signup only.
+  node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.js:156:     * @param options.redirectTo The redirect url which should be appended to the generated link
+  node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.js:157:     *
+  node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.js:159:     *
+  node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.js:160:     * @remarks
+> node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.js:161:     * - The following types can be passed into `generateLink()`: `signup`, `magiclink`, `invite`, `recovery`, `email_change_current`, `email_change_new`, `phone_change`.
+  node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.js:162:     * - `generateLink()` only generates the email link for `email_change_email` if the **Secure email change** is enabled in your project's [email auth provider settings](/dashboard/project/_/auth/providers).
+> node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.js:163:     * - `generateLink()` handles the creation of the user for `signup`, `invite` and `magiclink`.
+  node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.js:164:     *
+> node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.js:165:     * @example Generate a signup link
+  node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.js:166:     * ```js
+  node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.js:167:     * const { data, error } = await supabase.auth.admin.generateLink({
+> node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.js:168:     *   type: 'signup',
+  node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.js:169:     *   email: 'email@example.com',
+  node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.js:170:     *   password: 'secret'
+  node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.js:172:     * ```
+  node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.js:173:     *
+> node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.js:174:     * @exampleResponse Generate a signup link
+  node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.js:175:     * ```json
+  node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.js:176:     * {
+  node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.js:181:     *       "hashed_token": "<HASHED_TOKEN",
+  node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.js:182:     *       "redirect_to": "<REDIRECT_URL>",
+> node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.js:183:     *       "verification_type": "signup"
+  node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.js:184:     *     },
+  node_modules\@supabase\auth-js\dist\main\GoTrueAdminApi.js:185:     *     "user": {
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:3:import { Fetch } from './lib/fetch';
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:4:import { Deferred } from './lib/helpers';
+> node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:5:import type { AuthChangeEvent, AuthFlowType, AuthOtpResponse, AuthResponse, AuthTokenResponse, AuthTokenResponsePassword, CallRefreshTokenResult, GoTrueClientOptions, GoTrueMFAApi, InitializeResult, JWK, JwtHeader, JwtPayload, LockFunc, OAuthResponse, AuthOAuthServerApi, ResendParams, Session, SignInAnonymouslyCredentials, SignInWithIdTokenCredentials, SignInWithOAuthCredentials, SignInWithPasswordCredentials, SignInWithPasswordlessCredentials, SignInWithSSO, SignOut, SignUpWithPasswordCredentials, SSOResponse, Subscription, SupportedStorage, User, UserAttributes, UserIdentity, UserResponse, VerifyOtpParams, Web3Credentials } from './lib/types';
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:6:export default class GoTrueClient {
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:7:    private static nextInstanceID;
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:202:     * Be aware that if a user account exists in the system you may get back an
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:203:     * error message that attempts to hide this information from the user.
+> node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:204:     * This method has support for PKCE via email signups. The PKCE flow cannot be used when autoconfirm is enabled.
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:205:     *
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:206:     * @returns A logged-in session if the server has "autoconfirm" ON
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:215:     *   - If **Confirm email** is disabled, both a `user` and a `session` are returned.
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:216:     * - When the user confirms their email address, they are redirected to the [`SITE_URL`](/docs/guides/auth/redirect-urls#use-wildcards-in-redirect-urls) by default. You can modify your `SITE_URL` or add additional redirect URLs in [your project](/dashboard/project/_/auth/url-configuration).
+> node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:217:     * - If signUp() is called for an existing confirmed user:
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:218:     *   - When both **Confirm email** and **Confirm phone** (even when phone provider is disabled) are enabled in [your project](/dashboard/project/_/auth/providers), an obfuscated/fake user object is returned.
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:219:     *   - When either **Confirm email** or **Confirm phone** (even when phone provider is disabled) is disabled, the error message, `User already registered` is returned.
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:222:     * @example Sign up with an email and password
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:223:     * ```js
+> node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:224:     * const { data, error } = await supabase.auth.signUp({
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:225:     *   email: 'example@email.com',
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:226:     *   password: 'example-password',
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:319:     * @example Sign up with a phone number and password (SMS)
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:320:     * ```js
+> node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:321:     * const { data, error } = await supabase.auth.signUp({
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:322:     *   phone: '123456789',
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:323:     *   password: 'example-password',
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:333:     * @example Sign up with a phone number and password (whatsapp)
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:334:     * ```js
+> node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:335:     * const { data, error } = await supabase.auth.signUp({
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:336:     *   phone: '123456789',
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:337:     *   password: 'example-password',
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:344:     * @example Sign up with additional user metadata
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:345:     * ```js
+> node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:346:     * const { data, error } = await supabase.auth.signUp(
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:347:     *   {
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:348:     *     email: 'example@email.com',
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:363:     * @example Sign up with a redirect URL
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:364:     * ```js
+> node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:365:     * const { data, error } = await supabase.auth.signUp(
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:366:     *   {
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:367:     *     email: 'example@email.com',
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:374:     * ```
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:375:     */
+> node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:376:    signUp(credentials: SignUpWithPasswordCredentials): Promise<AuthResponse>;
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:377:    /**
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:378:     * Log in an existing user with an email and password or phone and password.
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:946:     * - Requires either an email or phone number.
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:947:     * - This method is used for passwordless sign-ins where a OTP is sent to the user's email or phone number.
+> node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:948:     * - If the user doesn't exist, `signInWithOtp()` will signup the user instead. To restrict this behavior, you can set `shouldCreateUser` in `SignInWithPasswordlessCredentials.options` to `false`.
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:949:     * - If you're using an email, you can configure whether you want the user to receive a magiclink or a OTP.
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:950:     * - If you're using phone, you can configure whether you want the user to receive a OTP.
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:1012:     *   1. `sms` – Used when verifying a one-time password (OTP) sent via SMS during sign-up or sign-in.
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:1013:     *   2. `phone_change` – Used when verifying an OTP sent to a new phone number during a phone number update process.
+> node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:1014:     * - If an email address is used, the type can be one of the following (note: `signup` and `magiclink` types are deprecated):
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:1015:     *   1. `email` – Used when verifying an OTP sent to the user's email during sign-up or sign-in.
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:1016:     *   2. `recovery` – Used when verifying an OTP sent for account recovery, typically after a password reset request.
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:1020:     * - The `TokenHash` is contained in the [email templates](/docs/guides/auth/auth-email-templates) and can be used to sign in.  You may wish to use the hash for the PKCE flow for Server Side Auth. Read [the Password-based Auth guide](/docs/guides/auth/passwords) for more details.
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:1021:     *
+> node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:1022:     * @example Verify Signup One-Time Password (OTP)
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:1023:     * ```js
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:1024:     * const { data, error } = await supabase.auth.verifyOtp({ email, token, type: 'email'})
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:1025:     * ```
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:1026:     *
+> node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:1027:     * @exampleResponse Verify Signup One-Time Password (OTP)
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:1028:     * ```json
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:1029:     * {
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:1218:    private _reauthenticate;
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:1219:    /**
+> node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:1220:     * Resends an existing signup confirmation email, email change email, SMS OTP or phone change OTP.
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:1221:     *
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:1222:     * @category Auth
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:1223:     *
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:1224:     * @remarks
+> node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:1225:     * - Resends a signup confirmation, email change or phone change email to the user.
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:1226:     * - Passwordless sign-ins can be resent by calling the `signInWithOtp()` method again.
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:1227:     * - Password recovery emails can be resent by calling the `resetPasswordForEmail()` method again.
+> node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:1228:     * - This method will only resend an email or phone OTP to the user if there was an initial signup, email change or phone change request being made(note: For existing users signing in with OTP, you should use `signInWithOtp()` again to resend the OTP).
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:1229:     * - You can specify a redirect url when you resend an email link using the `emailRedirectTo` option.
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:1230:     *
+> node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:1231:     * @exampleDescription Resend an email signup confirmation
+> node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:1232:     * Resends the email signup confirmation to the user
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:1233:     *
+> node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:1234:     * @example Resend an email signup confirmation
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:1235:     * ```js
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:1236:     * const { error } = await supabase.auth.resend({
+> node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:1237:     *   type: 'signup',
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:1238:     *   email: 'email@example.com',
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:1239:     *   options: {
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:1243:     * ```
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:1244:     *
+> node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:1245:     * @exampleDescription Resend a phone signup confirmation
+> node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:1246:     * Resends the phone signup confirmation email to the user
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:1247:     *
+> node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:1248:     * @example Resend a phone signup confirmation
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:1249:     * ```js
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.d.ts:1250:     * const { error } = await supabase.auth.resend({
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:403:        var _a, _b, _c;
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:404:        try {
+> node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:405:            const res = await (0, fetch_1._request)(this.fetch, 'POST', `${this.url}/signup`, {
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:406:                headers: this.headers,
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:407:                body: {
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:435:     * Be aware that if a user account exists in the system you may get back an
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:436:     * error message that attempts to hide this information from the user.
+> node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:437:     * This method has support for PKCE via email signups. The PKCE flow cannot be used when autoconfirm is enabled.
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:438:     *
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:439:     * @returns A logged-in session if the server has "autoconfirm" ON
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:448:     *   - If **Confirm email** is disabled, both a `user` and a `session` are returned.
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:449:     * - When the user confirms their email address, they are redirected to the [`SITE_URL`](/docs/guides/auth/redirect-urls#use-wildcards-in-redirect-urls) by default. You can modify your `SITE_URL` or add additional redirect URLs in [your project](/dashboard/project/_/auth/url-configuration).
+> node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:450:     * - If signUp() is called for an existing confirmed user:
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:451:     *   - When both **Confirm email** and **Confirm phone** (even when phone provider is disabled) are enabled in [your project](/dashboard/project/_/auth/providers), an obfuscated/fake user object is returned.
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:452:     *   - When either **Confirm email** or **Confirm phone** (even when phone provider is disabled) is disabled, the error message, `User already registered` is returned.
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:455:     * @example Sign up with an email and password
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:456:     * ```js
+> node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:457:     * const { data, error } = await supabase.auth.signUp({
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:458:     *   email: 'example@email.com',
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:459:     *   password: 'example-password',
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:552:     * @example Sign up with a phone number and password (SMS)
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:553:     * ```js
+> node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:554:     * const { data, error } = await supabase.auth.signUp({
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:555:     *   phone: '123456789',
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:556:     *   password: 'example-password',
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:566:     * @example Sign up with a phone number and password (whatsapp)
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:567:     * ```js
+> node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:568:     * const { data, error } = await supabase.auth.signUp({
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:569:     *   phone: '123456789',
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:570:     *   password: 'example-password',
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:577:     * @example Sign up with additional user metadata
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:578:     * ```js
+> node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:579:     * const { data, error } = await supabase.auth.signUp(
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:580:     *   {
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:581:     *     email: 'example@email.com',
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:596:     * @example Sign up with a redirect URL
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:597:     * ```js
+> node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:598:     * const { data, error } = await supabase.auth.signUp(
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:599:     *   {
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:600:     *     email: 'example@email.com',
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:607:     * ```
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:608:     */
+> node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:609:    async signUp(credentials) {
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:610:        var _a, _b, _c;
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:611:        try {
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:619:                    [codeChallenge, codeChallengeMethod] = await (0, helpers_1.getCodeChallengeAndMethod)(this.storage, this.storageKey);
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:620:                }
+> node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:621:                res = await (0, fetch_1._request)(this.fetch, 'POST', `${this.url}/signup`, {
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:622:                    headers: this.headers,
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:623:                    redirectTo: options === null || options === void 0 ? void 0 : options.emailRedirectTo,
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:635:            else if ('phone' in credentials) {
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:636:                const { phone, password, options } = credentials;
+> node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:637:                res = await (0, fetch_1._request)(this.fetch, 'POST', `${this.url}/signup`, {
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:638:                    headers: this.headers,
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:639:                    body: {
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:1621:     * - Requires either an email or phone number.
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:1622:     * - This method is used for passwordless sign-ins where a OTP is sent to the user's email or phone number.
+> node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:1623:     * - If the user doesn't exist, `signInWithOtp()` will signup the user instead. To restrict this behavior, you can set `shouldCreateUser` in `SignInWithPasswordlessCredentials.options` to `false`.
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:1624:     * - If you're using an email, you can configure whether you want the user to receive a magiclink or a OTP.
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:1625:     * - If you're using phone, you can configure whether you want the user to receive a OTP.
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:1738:     *   1. `sms` – Used when verifying a one-time password (OTP) sent via SMS during sign-up or sign-in.
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:1739:     *   2. `phone_change` – Used when verifying an OTP sent to a new phone number during a phone number update process.
+> node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:1740:     * - If an email address is used, the type can be one of the following (note: `signup` and `magiclink` types are deprecated):
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:1741:     *   1. `email` – Used when verifying an OTP sent to the user's email during sign-up or sign-in.
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:1742:     *   2. `recovery` – Used when verifying an OTP sent for account recovery, typically after a password reset request.
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:1746:     * - The `TokenHash` is contained in the [email templates](/docs/guides/auth/auth-email-templates) and can be used to sign in.  You may wish to use the hash for the PKCE flow for Server Side Auth. Read [the Password-based Auth guide](/docs/guides/auth/passwords) for more details.
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:1747:     *
+> node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:1748:     * @example Verify Signup One-Time Password (OTP)
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:1749:     * ```js
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:1750:     * const { data, error } = await supabase.auth.verifyOtp({ email, token, type: 'email'})
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:1751:     * ```
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:1752:     *
+> node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:1753:     * @exampleResponse Verify Signup One-Time Password (OTP)
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:1754:     * ```json
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:1755:     * {
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:2035:    }
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:2036:    /**
+> node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:2037:     * Resends an existing signup confirmation email, email change email, SMS OTP or phone change OTP.
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:2038:     *
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:2039:     * @category Auth
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:2040:     *
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:2041:     * @remarks
+> node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:2042:     * - Resends a signup confirmation, email change or phone change email to the user.
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:2043:     * - Passwordless sign-ins can be resent by calling the `signInWithOtp()` method again.
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:2044:     * - Password recovery emails can be resent by calling the `resetPasswordForEmail()` method again.
+> node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:2045:     * - This method will only resend an email or phone OTP to the user if there was an initial signup, email change or phone change request being made(note: For existing users signing in with OTP, you should use `signInWithOtp()` again to resend the OTP).
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:2046:     * - You can specify a redirect url when you resend an email link using the `emailRedirectTo` option.
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:2047:     *
+> node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:2048:     * @exampleDescription Resend an email signup confirmation
+> node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:2049:     * Resends the email signup confirmation to the user
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:2050:     *
+> node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:2051:     * @example Resend an email signup confirmation
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:2052:     * ```js
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:2053:     * const { error } = await supabase.auth.resend({
+> node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:2054:     *   type: 'signup',
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:2055:     *   email: 'email@example.com',
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:2056:     *   options: {
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:2060:     * ```
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:2061:     *
+> node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:2062:     * @exampleDescription Resend a phone signup confirmation
+> node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:2063:     * Resends the phone signup confirmation email to the user
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:2064:     *
+> node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:2065:     * @example Resend a phone signup confirmation
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:2066:     * ```js
+  node_modules\@supabase\auth-js\dist\main\GoTrueClient.js:2067:     * const { error } = await supabase.auth.resend({
+  node_modules\@supabase\auth-js\dist\main\lib\error-codes.d.ts:4: * on the server).
+  node_modules\@supabase\auth-js\dist\main\lib\error-codes.d.ts:5: */
+> node_modules\@supabase\auth-js\dist\main\lib\error-codes.d.ts:6:export type ErrorCode = 'unexpected_failure' | 'validation_failed' | 'bad_json' | 'email_exists' | 'phone_exists' | 'bad_jwt' | 'not_admin' | 'no_authorization' | 'user_not_found' | 'session_not_found' | 'session_expired' | 'refresh_token_not_found' | 'refresh_token_already_used' | 'flow_state_not_found' | 'flow_state_expired' | 'signup_disabled' | 'user_banned' | 'provider_email_needs_verification' | 'invite_not_found' | 'bad_oauth_state' | 'bad_oauth_callback' | 'oauth_provider_not_supported' | 'unexpected_audience' | 'single_identity_not_deletable' | 'email_conflict_identity_not_deletable' | 'identity_already_exists' | 'email_provider_disabled' | 'phone_provider_disabled' | 'too_many_enrolled_mfa_factors' | 'mfa_factor_name_conflict' | 'mfa_factor_not_found' | 'mfa_ip_address_mismatch' | 'mfa_challenge_expired' | 'mfa_verification_failed' | 'mfa_verification_rejected' | 'insufficient_aal' | 'captcha_failed' | 'saml_provider_disabled' | 'manual_linking_disabled' | 'sms_send_failed' | 'email_not_confirmed' | 'phone_not_confirmed' | 'reauth_nonce_missing' | 'saml_relay_state_not_found' | 'saml_relay_state_expired' | 'saml_idp_not_found' | 'saml_assertion_no_user_id' | 'saml_assertion_no_email' | 'user_already_exists' | 'sso_provider_not_found' | 'saml_metadata_fetch_failed' | 'saml_idp_already_exists' | 'sso_domain_already_exists' | 'saml_entity_id_mismatch' | 'conflict' | 'provider_disabled' | 'user_sso_managed' | 'reauthentication_needed' | 'same_password' | 'reauthentication_not_valid' | 'otp_expired' | 'otp_disabled' | 'identity_not_found' | 'weak_password' | 'over_request_rate_limit' | 'over_email_send_rate_limit' | 'over_sms_send_rate_limit' | 'bad_code_verifier' | 'anonymous_provider_disabled' | 'hook_timeout' | 'hook_timeout_after_retry' | 'hook_payload_over_size_limit' | 'hook_payload_invalid_content_type' | 'request_timeout' | 'mfa_phone_enroll_not_enabled' | 'mfa_phone_verify_not_enabled' | 'mfa_totp_enroll_not_enabled' | 'mfa_totp_verify_not_enabled' | 'mfa_webauthn_enroll_not_enabled' | 'mfa_webauthn_verify_not_enabled' | 'mfa_verified_factor_exists' | 'invalid_credentials' | 'email_address_not_authorized' | 'email_address_invalid';
+  node_modules\@supabase\auth-js\dist\main\lib\error-codes.d.ts:7://# sourceMappingURL=error-codes.d.ts.map
+  node_modules\@supabase\auth-js\dist\main\lib\types.d.ts:496:    };
+  node_modules\@supabase\auth-js\dist\main\lib\types.d.ts:497:};
+> node_modules\@supabase\auth-js\dist\main\lib\types.d.ts:498:export type SignUpWithPasswordCredentials = Prettify<PasswordCredentialsBase & {
+  node_modules\@supabase\auth-js\dist\main\lib\types.d.ts:499:    options?: {
+  node_modules\@supabase\auth-js\dist\main\lib\types.d.ts:500:        emailRedirectTo?: string;
+  node_modules\@supabase\auth-js\dist\main\lib\types.d.ts:682:}
+  node_modules\@supabase\auth-js\dist\main\lib\types.d.ts:683:export type MobileOtpType = 'sms' | 'phone_change';
+> node_modules\@supabase\auth-js\dist\main\lib\types.d.ts:684:export type EmailOtpType = 'signup' | 'invite' | 'magiclink' | 'recovery' | 'email_change' | 'email';
+  node_modules\@supabase\auth-js\dist\main\lib\types.d.ts:685:export type ResendParams = {
+> node_modules\@supabase\auth-js\dist\main\lib\types.d.ts:686:    type: Extract<EmailOtpType, 'signup' | 'email_change'>;
+  node_modules\@supabase\auth-js\dist\main\lib\types.d.ts:687:    email: string;
+  node_modules\@supabase\auth-js\dist\main\lib\types.d.ts:688:    options?: {
+  node_modules\@supabase\auth-js\dist\main\lib\types.d.ts:731:    };
+  node_modules\@supabase\auth-js\dist\main\lib\types.d.ts:732:};
+> node_modules\@supabase\auth-js\dist\main\lib\types.d.ts:733:export type GenerateSignupLinkParams = {
+> node_modules\@supabase\auth-js\dist\main\lib\types.d.ts:734:    type: 'signup';
+  node_modules\@supabase\auth-js\dist\main\lib\types.d.ts:735:    email: string;
+  node_modules\@supabase\auth-js\dist\main\lib\types.d.ts:736:    password: string;
+  node_modules\@supabase\auth-js\dist\main\lib\types.d.ts:769:    redirectTo?: string;
+  node_modules\@supabase\auth-js\dist\main\lib\types.d.ts:770:}
+> node_modules\@supabase\auth-js\dist\main\lib\types.d.ts:771:export type GenerateLinkParams = GenerateSignupLinkParams | GenerateInviteOrMagiclinkParams | GenerateRecoveryLinkParams | GenerateEmailChangeLinkParams;
+  node_modules\@supabase\auth-js\dist\main\lib\types.d.ts:772:export type GenerateLinkResponse = RequestResultSafeDestructure<{
+  node_modules\@supabase\auth-js\dist\main\lib\types.d.ts:773:    properties: GenerateLinkProperties;
+  node_modules\@supabase\auth-js\dist\main\lib\types.d.ts:795:    verification_type: GenerateLinkType;
+  node_modules\@supabase\auth-js\dist\main\lib\types.d.ts:796:};
+> node_modules\@supabase\auth-js\dist\main\lib\types.d.ts:797:export type GenerateLinkType = 'signup' | 'invite' | 'magiclink' | 'recovery' | 'email_change_current' | 'email_change_new';
+  node_modules\@supabase\auth-js\dist\main\lib\types.d.ts:798:export type MFAEnrollParams = MFAEnrollTOTPParams | MFAEnrollPhoneParams | MFAEnrollWebauthnParams;
+  node_modules\@supabase\auth-js\dist\main\lib\types.d.ts:799:export type MFAUnenrollParams = {
+  node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.d.ts:120:     * Generates email links and OTPs to be sent via a custom email provider.
+  node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.d.ts:121:     * @param email The user's email.
+> node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.d.ts:122:     * @param options.password User password. For signup only.
+> node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.d.ts:123:     * @param options.data Optional user metadata. For signup only.
+  node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.d.ts:124:     * @param options.redirectTo The redirect url which should be appended to the generated link
+  node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.d.ts:125:     *
+  node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.d.ts:127:     *
+  node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.d.ts:128:     * @remarks
+> node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.d.ts:129:     * - The following types can be passed into `generateLink()`: `signup`, `magiclink`, `invite`, `recovery`, `email_change_current`, `email_change_new`, `phone_change`.
+  node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.d.ts:130:     * - `generateLink()` only generates the email link for `email_change_email` if the **Secure email change** is enabled in your project's [email auth provider settings](/dashboard/project/_/auth/providers).
+> node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.d.ts:131:     * - `generateLink()` handles the creation of the user for `signup`, `invite` and `magiclink`.
+  node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.d.ts:132:     *
+> node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.d.ts:133:     * @example Generate a signup link
+  node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.d.ts:134:     * ```js
+  node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.d.ts:135:     * const { data, error } = await supabase.auth.admin.generateLink({
+> node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.d.ts:136:     *   type: 'signup',
+  node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.d.ts:137:     *   email: 'email@example.com',
+  node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.d.ts:138:     *   password: 'secret'
+  node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.d.ts:140:     * ```
+  node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.d.ts:141:     *
+> node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.d.ts:142:     * @exampleResponse Generate a signup link
+  node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.d.ts:143:     * ```json
+  node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.d.ts:144:     * {
+  node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.d.ts:149:     *       "hashed_token": "<HASHED_TOKEN",
+  node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.d.ts:150:     *       "redirect_to": "<REDIRECT_URL>",
+> node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.d.ts:151:     *       "verification_type": "signup"
+  node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.d.ts:152:     *     },
+  node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.d.ts:153:     *     "user": {
+  node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.js:150:     * Generates email links and OTPs to be sent via a custom email provider.
+  node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.js:151:     * @param email The user's email.
+> node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.js:152:     * @param options.password User password. For signup only.
+> node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.js:153:     * @param options.data Optional user metadata. For signup only.
+  node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.js:154:     * @param options.redirectTo The redirect url which should be appended to the generated link
+  node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.js:155:     *
+  node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.js:157:     *
+  node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.js:158:     * @remarks
+> node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.js:159:     * - The following types can be passed into `generateLink()`: `signup`, `magiclink`, `invite`, `recovery`, `email_change_current`, `email_change_new`, `phone_change`.
+  node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.js:160:     * - `generateLink()` only generates the email link for `email_change_email` if the **Secure email change** is enabled in your project's [email auth provider settings](/dashboard/project/_/auth/providers).
+> node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.js:161:     * - `generateLink()` handles the creation of the user for `signup`, `invite` and `magiclink`.
+  node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.js:162:     *
+> node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.js:163:     * @example Generate a signup link
+  node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.js:164:     * ```js
+  node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.js:165:     * const { data, error } = await supabase.auth.admin.generateLink({
+> node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.js:166:     *   type: 'signup',
+  node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.js:167:     *   email: 'email@example.com',
+  node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.js:168:     *   password: 'secret'
+  node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.js:170:     * ```
+  node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.js:171:     *
+> node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.js:172:     * @exampleResponse Generate a signup link
+  node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.js:173:     * ```json
+  node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.js:174:     * {
+  node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.js:179:     *       "hashed_token": "<HASHED_TOKEN",
+  node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.js:180:     *       "redirect_to": "<REDIRECT_URL>",
+> node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.js:181:     *       "verification_type": "signup"
+  node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.js:182:     *     },
+  node_modules\@supabase\auth-js\dist\module\GoTrueAdminApi.js:183:     *     "user": {
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:3:import { Fetch } from './lib/fetch';
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:4:import { Deferred } from './lib/helpers';
+> node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:5:import type { AuthChangeEvent, AuthFlowType, AuthOtpResponse, AuthResponse, AuthTokenResponse, AuthTokenResponsePassword, CallRefreshTokenResult, GoTrueClientOptions, GoTrueMFAApi, InitializeResult, JWK, JwtHeader, JwtPayload, LockFunc, OAuthResponse, AuthOAuthServerApi, ResendParams, Session, SignInAnonymouslyCredentials, SignInWithIdTokenCredentials, SignInWithOAuthCredentials, SignInWithPasswordCredentials, SignInWithPasswordlessCredentials, SignInWithSSO, SignOut, SignUpWithPasswordCredentials, SSOResponse, Subscription, SupportedStorage, User, UserAttributes, UserIdentity, UserResponse, VerifyOtpParams, Web3Credentials } from './lib/types';
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:6:export default class GoTrueClient {
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:7:    private static nextInstanceID;
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:202:     * Be aware that if a user account exists in the system you may get back an
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:203:     * error message that attempts to hide this information from the user.
+> node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:204:     * This method has support for PKCE via email signups. The PKCE flow cannot be used when autoconfirm is enabled.
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:205:     *
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:206:     * @returns A logged-in session if the server has "autoconfirm" ON
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:215:     *   - If **Confirm email** is disabled, both a `user` and a `session` are returned.
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:216:     * - When the user confirms their email address, they are redirected to the [`SITE_URL`](/docs/guides/auth/redirect-urls#use-wildcards-in-redirect-urls) by default. You can modify your `SITE_URL` or add additional redirect URLs in [your project](/dashboard/project/_/auth/url-configuration).
+> node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:217:     * - If signUp() is called for an existing confirmed user:
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:218:     *   - When both **Confirm email** and **Confirm phone** (even when phone provider is disabled) are enabled in [your project](/dashboard/project/_/auth/providers), an obfuscated/fake user object is returned.
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:219:     *   - When either **Confirm email** or **Confirm phone** (even when phone provider is disabled) is disabled, the error message, `User already registered` is returned.
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:222:     * @example Sign up with an email and password
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:223:     * ```js
+> node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:224:     * const { data, error } = await supabase.auth.signUp({
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:225:     *   email: 'example@email.com',
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:226:     *   password: 'example-password',
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:319:     * @example Sign up with a phone number and password (SMS)
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:320:     * ```js
+> node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:321:     * const { data, error } = await supabase.auth.signUp({
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:322:     *   phone: '123456789',
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:323:     *   password: 'example-password',
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:333:     * @example Sign up with a phone number and password (whatsapp)
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:334:     * ```js
+> node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:335:     * const { data, error } = await supabase.auth.signUp({
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:336:     *   phone: '123456789',
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:337:     *   password: 'example-password',
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:344:     * @example Sign up with additional user metadata
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:345:     * ```js
+> node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:346:     * const { data, error } = await supabase.auth.signUp(
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:347:     *   {
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:348:     *     email: 'example@email.com',
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:363:     * @example Sign up with a redirect URL
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:364:     * ```js
+> node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:365:     * const { data, error } = await supabase.auth.signUp(
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:366:     *   {
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:367:     *     email: 'example@email.com',
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:374:     * ```
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:375:     */
+> node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:376:    signUp(credentials: SignUpWithPasswordCredentials): Promise<AuthResponse>;
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:377:    /**
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:378:     * Log in an existing user with an email and password or phone and password.
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:946:     * - Requires either an email or phone number.
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:947:     * - This method is used for passwordless sign-ins where a OTP is sent to the user's email or phone number.
+> node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:948:     * - If the user doesn't exist, `signInWithOtp()` will signup the user instead. To restrict this behavior, you can set `shouldCreateUser` in `SignInWithPasswordlessCredentials.options` to `false`.
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:949:     * - If you're using an email, you can configure whether you want the user to receive a magiclink or a OTP.
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:950:     * - If you're using phone, you can configure whether you want the user to receive a OTP.
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:1012:     *   1. `sms` – Used when verifying a one-time password (OTP) sent via SMS during sign-up or sign-in.
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:1013:     *   2. `phone_change` – Used when verifying an OTP sent to a new phone number during a phone number update process.
+> node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:1014:     * - If an email address is used, the type can be one of the following (note: `signup` and `magiclink` types are deprecated):
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:1015:     *   1. `email` – Used when verifying an OTP sent to the user's email during sign-up or sign-in.
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:1016:     *   2. `recovery` – Used when verifying an OTP sent for account recovery, typically after a password reset request.
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:1020:     * - The `TokenHash` is contained in the [email templates](/docs/guides/auth/auth-email-templates) and can be used to sign in.  You may wish to use the hash for the PKCE flow for Server Side Auth. Read [the Password-based Auth guide](/docs/guides/auth/passwords) for more details.
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:1021:     *
+> node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:1022:     * @example Verify Signup One-Time Password (OTP)
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:1023:     * ```js
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:1024:     * const { data, error } = await supabase.auth.verifyOtp({ email, token, type: 'email'})
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:1025:     * ```
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:1026:     *
+> node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:1027:     * @exampleResponse Verify Signup One-Time Password (OTP)
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:1028:     * ```json
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:1029:     * {
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:1218:    private _reauthenticate;
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:1219:    /**
+> node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:1220:     * Resends an existing signup confirmation email, email change email, SMS OTP or phone change OTP.
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:1221:     *
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:1222:     * @category Auth
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:1223:     *
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:1224:     * @remarks
+> node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:1225:     * - Resends a signup confirmation, email change or phone change email to the user.
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:1226:     * - Passwordless sign-ins can be resent by calling the `signInWithOtp()` method again.
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:1227:     * - Password recovery emails can be resent by calling the `resetPasswordForEmail()` method again.
+> node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:1228:     * - This method will only resend an email or phone OTP to the user if there was an initial signup, email change or phone change request being made(note: For existing users signing in with OTP, you should use `signInWithOtp()` again to resend the OTP).
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:1229:     * - You can specify a redirect url when you resend an email link using the `emailRedirectTo` option.
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:1230:     *
+> node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:1231:     * @exampleDescription Resend an email signup confirmation
+> node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:1232:     * Resends the email signup confirmation to the user
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:1233:     *
+> node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:1234:     * @example Resend an email signup confirmation
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:1235:     * ```js
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:1236:     * const { error } = await supabase.auth.resend({
+> node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:1237:     *   type: 'signup',
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:1238:     *   email: 'email@example.com',
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:1239:     *   options: {
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:1243:     * ```
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:1244:     *
+> node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:1245:     * @exampleDescription Resend a phone signup confirmation
+> node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:1246:     * Resends the phone signup confirmation email to the user
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:1247:     *
+> node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:1248:     * @example Resend a phone signup confirmation
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:1249:     * ```js
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.d.ts:1250:     * const { error } = await supabase.auth.resend({
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:400:        var _a, _b, _c;
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:401:        try {
+> node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:402:            const res = await _request(this.fetch, 'POST', `${this.url}/signup`, {
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:403:                headers: this.headers,
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:404:                body: {
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:432:     * Be aware that if a user account exists in the system you may get back an
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:433:     * error message that attempts to hide this information from the user.
+> node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:434:     * This method has support for PKCE via email signups. The PKCE flow cannot be used when autoconfirm is enabled.
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:435:     *
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:436:     * @returns A logged-in session if the server has "autoconfirm" ON
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:445:     *   - If **Confirm email** is disabled, both a `user` and a `session` are returned.
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:446:     * - When the user confirms their email address, they are redirected to the [`SITE_URL`](/docs/guides/auth/redirect-urls#use-wildcards-in-redirect-urls) by default. You can modify your `SITE_URL` or add additional redirect URLs in [your project](/dashboard/project/_/auth/url-configuration).
+> node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:447:     * - If signUp() is called for an existing confirmed user:
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:448:     *   - When both **Confirm email** and **Confirm phone** (even when phone provider is disabled) are enabled in [your project](/dashboard/project/_/auth/providers), an obfuscated/fake user object is returned.
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:449:     *   - When either **Confirm email** or **Confirm phone** (even when phone provider is disabled) is disabled, the error message, `User already registered` is returned.
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:452:     * @example Sign up with an email and password
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:453:     * ```js
+> node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:454:     * const { data, error } = await supabase.auth.signUp({
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:455:     *   email: 'example@email.com',
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:456:     *   password: 'example-password',
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:549:     * @example Sign up with a phone number and password (SMS)
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:550:     * ```js
+> node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:551:     * const { data, error } = await supabase.auth.signUp({
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:552:     *   phone: '123456789',
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:553:     *   password: 'example-password',
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:563:     * @example Sign up with a phone number and password (whatsapp)
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:564:     * ```js
+> node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:565:     * const { data, error } = await supabase.auth.signUp({
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:566:     *   phone: '123456789',
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:567:     *   password: 'example-password',
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:574:     * @example Sign up with additional user metadata
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:575:     * ```js
+> node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:576:     * const { data, error } = await supabase.auth.signUp(
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:577:     *   {
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:578:     *     email: 'example@email.com',
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:593:     * @example Sign up with a redirect URL
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:594:     * ```js
+> node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:595:     * const { data, error } = await supabase.auth.signUp(
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:596:     *   {
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:597:     *     email: 'example@email.com',
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:604:     * ```
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:605:     */
+> node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:606:    async signUp(credentials) {
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:607:        var _a, _b, _c;
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:608:        try {
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:616:                    [codeChallenge, codeChallengeMethod] = await getCodeChallengeAndMethod(this.storage, this.storageKey);
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:617:                }
+> node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:618:                res = await _request(this.fetch, 'POST', `${this.url}/signup`, {
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:619:                    headers: this.headers,
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:620:                    redirectTo: options === null || options === void 0 ? void 0 : options.emailRedirectTo,
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:632:            else if ('phone' in credentials) {
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:633:                const { phone, password, options } = credentials;
+> node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:634:                res = await _request(this.fetch, 'POST', `${this.url}/signup`, {
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:635:                    headers: this.headers,
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:636:                    body: {
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:1618:     * - Requires either an email or phone number.
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:1619:     * - This method is used for passwordless sign-ins where a OTP is sent to the user's email or phone number.
+> node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:1620:     * - If the user doesn't exist, `signInWithOtp()` will signup the user instead. To restrict this behavior, you can set `shouldCreateUser` in `SignInWithPasswordlessCredentials.options` to `false`.
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:1621:     * - If you're using an email, you can configure whether you want the user to receive a magiclink or a OTP.
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:1622:     * - If you're using phone, you can configure whether you want the user to receive a OTP.
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:1735:     *   1. `sms` – Used when verifying a one-time password (OTP) sent via SMS during sign-up or sign-in.
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:1736:     *   2. `phone_change` – Used when verifying an OTP sent to a new phone number during a phone number update process.
+> node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:1737:     * - If an email address is used, the type can be one of the following (note: `signup` and `magiclink` types are deprecated):
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:1738:     *   1. `email` – Used when verifying an OTP sent to the user's email during sign-up or sign-in.
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:1739:     *   2. `recovery` – Used when verifying an OTP sent for account recovery, typically after a password reset request.
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:1743:     * - The `TokenHash` is contained in the [email templates](/docs/guides/auth/auth-email-templates) and can be used to sign in.  You may wish to use the hash for the PKCE flow for Server Side Auth. Read [the Password-based Auth guide](/docs/guides/auth/passwords) for more details.
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:1744:     *
+> node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:1745:     * @example Verify Signup One-Time Password (OTP)
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:1746:     * ```js
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:1747:     * const { data, error } = await supabase.auth.verifyOtp({ email, token, type: 'email'})
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:1748:     * ```
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:1749:     *
+> node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:1750:     * @exampleResponse Verify Signup One-Time Password (OTP)
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:1751:     * ```json
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:1752:     * {
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:2032:    }
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:2033:    /**
+> node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:2034:     * Resends an existing signup confirmation email, email change email, SMS OTP or phone change OTP.
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:2035:     *
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:2036:     * @category Auth
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:2037:     *
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:2038:     * @remarks
+> node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:2039:     * - Resends a signup confirmation, email change or phone change email to the user.
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:2040:     * - Passwordless sign-ins can be resent by calling the `signInWithOtp()` method again.
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:2041:     * - Password recovery emails can be resent by calling the `resetPasswordForEmail()` method again.
+> node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:2042:     * - This method will only resend an email or phone OTP to the user if there was an initial signup, email change or phone change request being made(note: For existing users signing in with OTP, you should use `signInWithOtp()` again to resend the OTP).
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:2043:     * - You can specify a redirect url when you resend an email link using the `emailRedirectTo` option.
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:2044:     *
+> node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:2045:     * @exampleDescription Resend an email signup confirmation
+> node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:2046:     * Resends the email signup confirmation to the user
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:2047:     *
+> node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:2048:     * @example Resend an email signup confirmation
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:2049:     * ```js
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:2050:     * const { error } = await supabase.auth.resend({
+> node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:2051:     *   type: 'signup',
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:2052:     *   email: 'email@example.com',
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:2053:     *   options: {
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:2057:     * ```
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:2058:     *
+> node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:2059:     * @exampleDescription Resend a phone signup confirmation
+> node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:2060:     * Resends the phone signup confirmation email to the user
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:2061:     *
+> node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:2062:     * @example Resend a phone signup confirmation
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:2063:     * ```js
+  node_modules\@supabase\auth-js\dist\module\GoTrueClient.js:2064:     * const { error } = await supabase.auth.resend({
+  node_modules\@supabase\auth-js\dist\module\lib\error-codes.d.ts:4: * on the server).
+  node_modules\@supabase\auth-js\dist\module\lib\error-codes.d.ts:5: */
+> node_modules\@supabase\auth-js\dist\module\lib\error-codes.d.ts:6:export type ErrorCode = 'unexpected_failure' | 'validation_failed' | 'bad_json' | 'email_exists' | 'phone_exists' | 'bad_jwt' | 'not_admin' | 'no_authorization' | 'user_not_found' | 'session_not_found' | 'session_expired' | 'refresh_token_not_found' | 'refresh_token_already_used' | 'flow_state_not_found' | 'flow_state_expired' | 'signup_disabled' | 'user_banned' | 'provider_email_needs_verification' | 'invite_not_found' | 'bad_oauth_state' | 'bad_oauth_callback' | 'oauth_provider_not_supported' | 'unexpected_audience' | 'single_identity_not_deletable' | 'email_conflict_identity_not_deletable' | 'identity_already_exists' | 'email_provider_disabled' | 'phone_provider_disabled' | 'too_many_enrolled_mfa_factors' | 'mfa_factor_name_conflict' | 'mfa_factor_not_found' | 'mfa_ip_address_mismatch' | 'mfa_challenge_expired' | 'mfa_verification_failed' | 'mfa_verification_rejected' | 'insufficient_aal' | 'captcha_failed' | 'saml_provider_disabled' | 'manual_linking_disabled' | 'sms_send_failed' | 'email_not_confirmed' | 'phone_not_confirmed' | 'reauth_nonce_missing' | 'saml_relay_state_not_found' | 'saml_relay_state_expired' | 'saml_idp_not_found' | 'saml_assertion_no_user_id' | 'saml_assertion_no_email' | 'user_already_exists' | 'sso_provider_not_found' | 'saml_metadata_fetch_failed' | 'saml_idp_already_exists' | 'sso_domain_already_exists' | 'saml_entity_id_mismatch' | 'conflict' | 'provider_disabled' | 'user_sso_managed' | 'reauthentication_needed' | 'same_password' | 'reauthentication_not_valid' | 'otp_expired' | 'otp_disabled' | 'identity_not_found' | 'weak_password' | 'over_request_rate_limit' | 'over_email_send_rate_limit' | 'over_sms_send_rate_limit' | 'bad_code_verifier' | 'anonymous_provider_disabled' | 'hook_timeout' | 'hook_timeout_after_retry' | 'hook_payload_over_size_limit' | 'hook_payload_invalid_content_type' | 'request_timeout' | 'mfa_phone_enroll_not_enabled' | 'mfa_phone_verify_not_enabled' | 'mfa_totp_enroll_not_enabled' | 'mfa_totp_verify_not_enabled' | 'mfa_webauthn_enroll_not_enabled' | 'mfa_webauthn_verify_not_enabled' | 'mfa_verified_factor_exists' | 'invalid_credentials' | 'email_address_not_authorized' | 'email_address_invalid';
+  node_modules\@supabase\auth-js\dist\module\lib\error-codes.d.ts:7://# sourceMappingURL=error-codes.d.ts.map
+  node_modules\@supabase\auth-js\dist\module\lib\types.d.ts:496:    };
+  node_modules\@supabase\auth-js\dist\module\lib\types.d.ts:497:};
+> node_modules\@supabase\auth-js\dist\module\lib\types.d.ts:498:export type SignUpWithPasswordCredentials = Prettify<PasswordCredentialsBase & {
+  node_modules\@supabase\auth-js\dist\module\lib\types.d.ts:499:    options?: {
+  node_modules\@supabase\auth-js\dist\module\lib\types.d.ts:500:        emailRedirectTo?: string;
+  node_modules\@supabase\auth-js\dist\module\lib\types.d.ts:682:}
+  node_modules\@supabase\auth-js\dist\module\lib\types.d.ts:683:export type MobileOtpType = 'sms' | 'phone_change';
+> node_modules\@supabase\auth-js\dist\module\lib\types.d.ts:684:export type EmailOtpType = 'signup' | 'invite' | 'magiclink' | 'recovery' | 'email_change' | 'email';
+  node_modules\@supabase\auth-js\dist\module\lib\types.d.ts:685:export type ResendParams = {
+> node_modules\@supabase\auth-js\dist\module\lib\types.d.ts:686:    type: Extract<EmailOtpType, 'signup' | 'email_change'>;
+  node_modules\@supabase\auth-js\dist\module\lib\types.d.ts:687:    email: string;
+  node_modules\@supabase\auth-js\dist\module\lib\types.d.ts:688:    options?: {
+  node_modules\@supabase\auth-js\dist\module\lib\types.d.ts:731:    };
+  node_modules\@supabase\auth-js\dist\module\lib\types.d.ts:732:};
+> node_modules\@supabase\auth-js\dist\module\lib\types.d.ts:733:export type GenerateSignupLinkParams = {
+> node_modules\@supabase\auth-js\dist\module\lib\types.d.ts:734:    type: 'signup';
+  node_modules\@supabase\auth-js\dist\module\lib\types.d.ts:735:    email: string;
+  node_modules\@supabase\auth-js\dist\module\lib\types.d.ts:736:    password: string;
+  node_modules\@supabase\auth-js\dist\module\lib\types.d.ts:769:    redirectTo?: string;
+  node_modules\@supabase\auth-js\dist\module\lib\types.d.ts:770:}
+> node_modules\@supabase\auth-js\dist\module\lib\types.d.ts:771:export type GenerateLinkParams = GenerateSignupLinkParams | GenerateInviteOrMagiclinkParams | GenerateRecoveryLinkParams | GenerateEmailChangeLinkParams;
+  node_modules\@supabase\auth-js\dist\module\lib\types.d.ts:772:export type GenerateLinkResponse = RequestResultSafeDestructure<{
+  node_modules\@supabase\auth-js\dist\module\lib\types.d.ts:773:    properties: GenerateLinkProperties;
+  node_modules\@supabase\auth-js\dist\module\lib\types.d.ts:795:    verification_type: GenerateLinkType;
+  node_modules\@supabase\auth-js\dist\module\lib\types.d.ts:796:};
+> node_modules\@supabase\auth-js\dist\module\lib\types.d.ts:797:export type GenerateLinkType = 'signup' | 'invite' | 'magiclink' | 'recovery' | 'email_change_current' | 'email_change_new';
+  node_modules\@supabase\auth-js\dist\module\lib\types.d.ts:798:export type MFAEnrollParams = MFAEnrollTOTPParams | MFAEnrollPhoneParams | MFAEnrollWebauthnParams;
+  node_modules\@supabase\auth-js\dist\module\lib\types.d.ts:799:export type MFAUnenrollParams = {
+

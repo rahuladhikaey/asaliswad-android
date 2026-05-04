@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: asali-swad-web
+    env: node
+    region: singapore # You can change this to your preferred region (e.g., oregon, frankfurt, ohio)
+    plan: starter # Change to free if you want to use the free tier
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 20.x
+      # Make sure to add these environment variables in the Render dashboard:
+      # - NEXT_PUBLIC_SUPABASE_URL
+      # - NEXT_PUBLIC_SUPABASE_ANON_KEY
+      # - SUPABASE_SERVICE_ROLE_KEY
+      # - NEXT_PUBLIC_RAZORPAY_KEY_ID
+      # - RAZORPAY_KEY_ID
+      # - RAZORPAY_KEY_SECRET
