@@ -50,17 +50,9 @@ export function Footer() {
               <li><Link href="/admin" className="transition hover:text-emerald-400">Dashboard</Link></li>
             </ul>
           </div>
-
-          {/* Contact Support Column (Instead of newsletter) */}
-          <div className="lg:col-span-2 flex flex-col justify-end">
-             <div className="p-8 rounded-[2rem] bg-slate-800 border border-slate-700 flex flex-col items-center justify-center text-center">
-               <span className="text-[10px] font-black uppercase tracking-widest text-emerald-400 mb-2">Support</span>
-               <span className="text-xs font-black text-white">Help Center</span>
-             </div>
-          </div>
         </div>
 
-        <div className="mt-20 border-t border-slate-700 pt-12 text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 sm:flex sm:items-center sm:justify-between">
+        <div className="mt-12 border-t border-slate-700 pt-8 text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 sm:flex sm:items-center sm:justify-between">
           <p>© 2026 Asali Swad. All rights reserved.</p>
           <div className="mt-6 flex flex-wrap gap-8 sm:mt-0">
             <Link href="mailto:connect.asaliswad2026@gmail.com" className="transition hover:text-emerald-400">connect.asaliswad2026@gmail.com</Link>
