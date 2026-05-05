@@ -130,14 +130,15 @@ export default function ProductImageCarousel({
           style={{ transform: `translateX(${currentIndex * -100}%)` }}
         >
           {images.map((img, idx) => (
-            <div key={idx} className="flex-none w-full p-2">
-              <div className="relative overflow-hidden rounded-[2.5rem] bg-white aspect-square group shadow-sm border border-slate-100">
+            <div key={idx} className="flex-none w-full p-2 flex items-center justify-center">
+              <div className="relative overflow-hidden rounded-[2.5rem] bg-white aspect-square group shadow-sm border border-slate-100 flex items-center justify-center">
                 <Image
                   src={img}
                   alt={`${productName} - View ${idx + 1}`}
                   fill
                   className="object-contain p-4 transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, 50vw"
+                  style={{maxHeight:'220px',maxWidth:'220px'}}
                 />
               </div>
             </div>

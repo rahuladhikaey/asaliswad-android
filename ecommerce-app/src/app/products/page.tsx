@@ -108,11 +108,12 @@ export default function ProductsPage() {
             : filtered.map((product) => (
                 <article key={product.id} className="group relative flex flex-col overflow-hidden rounded-[2.5rem] bg-white border border-slate-100 hover:border-emerald-100 transition-all duration-500 hover:shadow-2xl hover:shadow-emerald-500/10">
                   {/* Image Holder */}
-                  <Link href={`/products/${product.id}`} className="relative aspect-square w-full overflow-hidden bg-slate-50/50 p-6">
+                  <Link href={`/products/${product.id}`} className="relative aspect-square w-full overflow-hidden bg-slate-50/50 p-2 flex items-center justify-center">
                     <img
                       src={product.images?.[0] || product.image_url}
                       alt={product.name}
-                      className="h-full w-full object-contain transition duration-1000 group-hover:scale-110"
+                      className="h-40 w-40 object-contain transition duration-1000 group-hover:scale-110 mx-auto"
+                      style={{maxHeight:'160px',maxWidth:'160px'}}
                     />
                     <div className="absolute right-4 top-4 z-10 opacity-0 group-hover:opacity-100 transition-opacity">
                       <WishlistButton product={product} />
