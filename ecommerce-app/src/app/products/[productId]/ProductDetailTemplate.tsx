@@ -5,7 +5,7 @@ import { Product } from "@/lib/types";
 import { AddToCartButton } from "@/components/AddToCartButton";
 import { BuyNowButton } from "@/components/BuyNowButton";
 import { WishlistButton } from "@/components/WishlistButton";
-import { ShieldCheck, Truck, RefreshCcw, Tag, ChevronRight, Star } from "lucide-react";
+import { ShieldCheck, Truck, RefreshCcw, Tag, ChevronRight, Star, Home, ShoppingBag } from "lucide-react";
 import Link from "next/link";
 import ProductImageCarousel from "@/components/ProductImageCarousel";
 
@@ -31,11 +31,12 @@ export default function ProductDetailTemplate({
           <div className="lg:col-span-7 lg:sticky lg:top-24">
             <div className="flex flex-col gap-6">
               {/* Image Carousel with Slide Controls */}
-              <ProductImageCarousel images={images} productName={product.name} />
-
-              {/* Wishlist Button */}
-              <div className="flex justify-end">
-                <WishlistButton product={product} />
+              <div className="relative group">
+                <ProductImageCarousel images={images} productName={product.name} />
+                {/* Wishlist Button - Overlaid on image for mobile, better placement */}
+                <div className="absolute top-6 right-6 z-30">
+                  <WishlistButton product={product} />
+                </div>
               </div>
 
               {/* Action Buttons - Desktop (Flipkart Colors) */}
@@ -207,22 +208,31 @@ export default function ProductDetailTemplate({
         )}
       </div>
 
-      {/* STICKY BOTTOM BAR FOR MOBILE */}
-      <div className="fixed bottom-0 left-0 right-0 z-[60] flex h-16 w-full items-center bg-white border-t border-slate-100 lg:hidden shadow-[0_-8px_30px_rgb(0,0,0,0.08)]">
-        <div className="grid grid-cols-2 h-full w-full">
-          <AddToCartButton
-            product={product}
-            className="flex items-center justify-center bg-gradient-to-r from-[#b8e636] to-[#8cc63f] text-white text-[10px] font-black uppercase tracking-widest hover:from-[#a5d32a] hover:to-[#7ab535] transition-colors border-r border-white/10"
-          />
-          <BuyNowButton
-            product={product}
-            className="flex items-center justify-center bg-gradient-to-r from-[#16a34a] to-[#15803d] text-white text-[10px] font-black uppercase tracking-widest hover:from-[#138a3f] hover:to-[#116d34] transition-colors"
-          />
+      {/* PREMIUM STICKY BOTTOM BAR FOR MOBILE */}
+      <div className="fixed bottom-0 left-0 right-0 z-[60] lg:hidden">
+        <div className="glass-effect mx-4 mb-6 flex h-20 items-center gap-3 overflow-hidden rounded-[2.5rem] px-4 shadow-[0_20px_50px_rgba(0,0,0,0.25)]">
+          {/* Quick Nav Icons */}
+          <div className="flex items-center gap-2 pr-2 border-r border-slate-100">
+            <Link href="/" className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-50 text-slate-600 active:scale-90 transition-all border border-slate-100">
+              <Home size={20} className="text-slate-900" />
+            </Link>
+          </div>
+
+          <div className="grid flex-1 grid-cols-2 gap-3">
+            <AddToCartButton
+              product={product}
+              className="flex h-14 items-center justify-center gap-2 rounded-2xl bg-gradient-to-br from-[#b8e636] to-[#8cc63f] text-[10px] font-black uppercase tracking-widest text-white shadow-lg shadow-lime-400/20 active:scale-95 transition-all"
+            />
+            <BuyNowButton
+              product={product}
+              className="flex h-14 items-center justify-center gap-2 rounded-2xl bg-gradient-to-br from-[#16a34a] to-[#15803d] text-[10px] font-black uppercase tracking-widest text-white shadow-lg shadow-green-600/20 active:scale-95 transition-all"
+            />
+          </div>
         </div>
       </div>
 
-      {/* Padding for bottom bar on mobile */}
-      <div className="h-20 lg:hidden" />
+      {/* Spacing for bottom bar */}
+      <div className="h-28 lg:hidden" />
     </div>
 
   );

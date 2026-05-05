@@ -15,6 +15,10 @@ export function MobileBottomNav() {
     { name: "Profile", href: "/profile", icon: User },
   ];
 
+  const isProductPage = pathname?.startsWith("/products/") && pathname.split("/").length > 2;
+
+  if (isProductPage) return null;
+
   return (
     <nav className="fixed bottom-0 left-0 right-0 z-[100] lg:hidden">
       <div className="glass-effect mx-4 mb-4 rounded-[2rem] px-6 py-4 shadow-2xl">

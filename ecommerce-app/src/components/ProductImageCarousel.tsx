@@ -136,9 +136,9 @@ export default function ProductImageCarousel({
                   src={img}
                   alt={`${productName} - View ${idx + 1}`}
                   fill
-                  className="object-contain p-4 transition-transform duration-500"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  style={{maxHeight:'220px',maxWidth:'220px'}}
+                  className="object-contain p-2 transition-transform duration-700 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
+                  priority={idx === 0}
                 />
               </div>
             </div>
