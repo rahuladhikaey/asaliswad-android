@@ -19,8 +19,8 @@ import androidx.compose.ui.viewinterop.AndroidView
 @SuppressLint("SetJavaScriptEnabled")
 @Composable
 fun WebViewScreen() {
-    // IMPORTANT: Replace this with your actual production URL
-    val url = "https://www.asaliswad.shop/" 
+    // Production URL - Render deployment
+    val url = "https://asaliswad-android.onrender.com"
     
     var webView: WebView? by remember { mutableStateOf(null) }
     var isLoading by remember { mutableStateOf(true) }

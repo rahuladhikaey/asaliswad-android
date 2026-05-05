@@ -43,6 +43,29 @@ export default async function HomePage() {
           </div>
         </div>
 
+        {/* Android App Download Banner - Premium Feel */}
+        <div className="mt-8">
+          <div className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-emerald-600 to-emerald-800 p-8 shadow-2xl shadow-emerald-900/20">
+            <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
+              <div className="flex flex-col gap-2 text-center md:text-left">
+                <h3 className="text-xl font-black text-white tracking-tight">Get the Asali Swad App</h3>
+                <p className="text-xs font-bold text-emerald-100 uppercase tracking-widest opacity-80">Better Experience • Exclusive Deals • Fast Orders</p>
+              </div>
+              <a 
+                href="/asaliswad.apk" 
+                download
+                className="group flex items-center gap-3 bg-white px-8 py-4 rounded-full text-emerald-900 text-[11px] font-black uppercase tracking-widest hover:bg-slate-50 transition-all active:scale-95 shadow-xl"
+              >
+                <span>Download Android APK</span>
+                <span className="text-lg transition-transform group-hover:translate-y-1">↓</span>
+              </a>
+            </div>
+            {/* Decorative background elements */}
+            <div className="absolute -top-12 -right-12 h-40 w-40 rounded-full bg-white/10 blur-3xl"></div>
+            <div className="absolute -bottom-12 -left-12 h-40 w-40 rounded-full bg-emerald-400/10 blur-3xl"></div>
+          </div>
+        </div>
+
         {/* Mobile Search - Focused Experience */}
         <div className="mt-8">
           <MobileSearch />
