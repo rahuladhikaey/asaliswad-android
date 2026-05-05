@@ -81,7 +81,7 @@ export default async function HomePage() {
               <h2 className="text-2xl font-black tracking-tight text-slate-900">Today&apos;s Selection</h2>
               <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Handpicked Premium Quality</p>
             </div>
-            <Link href="/products" className="rounded-2xl bg-slate-900 px-7 py-3.5 text-[10px] font-black uppercase tracking-widest text-white hover:bg-emerald-600 transition-all touch-3d active:scale-95 shadow-xl shadow-slate-900/10">
+            <Link href="/products" className="rounded-2xl bg-blue-600 px-7 py-3.5 text-[10px] font-black uppercase tracking-widest text-yellow-400 hover:bg-blue-700 transition-all touch-3d active:scale-95 shadow-xl shadow-blue-600/20">
               Explore
             </Link>
           </div>
@@ -132,10 +132,10 @@ export default async function HomePage() {
           <div className="mt-16 flex justify-center">
             <Link 
               href="/products" 
-              className="group relative flex items-center gap-4 overflow-hidden rounded-full bg-slate-900 px-14 py-4 text-[11px] font-black uppercase tracking-[0.3em] text-white transition-all hover:bg-emerald-600 active:scale-95 touch-3d shadow-2xl shadow-slate-900/20"
+              className="group relative flex items-center gap-4 overflow-hidden rounded-full bg-blue-600 px-14 py-5 text-[11px] font-black uppercase tracking-[0.3em] text-yellow-400 transition-all hover:bg-blue-700 active:scale-95 touch-3d shadow-2xl shadow-blue-600/30"
             >
-              <span>View All Products</span>
-              <span className="text-lg transition-transform group-hover:translate-x-1">→</span>
+              <span className="relative z-10">View All Products</span>
+              <span className="relative z-10 text-lg transition-transform group-hover:translate-x-1">→</span>
             </Link>
           </div>
         </section>
