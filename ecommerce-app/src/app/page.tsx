@@ -81,13 +81,13 @@ export default async function HomePage() {
               <h2 className="text-2xl font-black tracking-tight text-slate-900">Today&apos;s Selection</h2>
               <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Handpicked Premium Quality</p>
             </div>
-            <Link href="/products" className="rounded-2xl bg-slate-900 px-5 py-2.5 text-[10px] font-black uppercase tracking-widest text-white hover:bg-emerald-600 transition-all active:scale-95 shadow-xl shadow-slate-900/10">
+            <Link href="/products" className="rounded-2xl bg-slate-900 px-7 py-3.5 text-[10px] font-black uppercase tracking-widest text-white hover:bg-emerald-600 transition-all touch-3d active:scale-95 shadow-xl shadow-slate-900/10">
               Explore
             </Link>
           </div>
 
-          <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 lg:gap-8">
-            {products.map((product) => (
+          <div className="grid grid-cols-2 gap-5 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 lg:gap-8">
+            {products.slice(0, 4).map((product) => (
               <article
                 key={product.id}
                 className="group relative flex flex-col overflow-hidden rounded-[2.5rem] bg-white border border-slate-100 hover:border-emerald-100 transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-500/10"
@@ -132,9 +132,9 @@ export default async function HomePage() {
           <div className="mt-16 flex justify-center">
             <Link 
               href="/products" 
-              className="group relative flex items-center gap-4 overflow-hidden rounded-full bg-slate-900 px-12 py-6 text-[11px] font-black uppercase tracking-[0.3em] text-white transition-all hover:bg-emerald-600 hover:px-14 active:scale-95 shadow-2xl shadow-slate-900/20"
+              className="group relative flex items-center gap-4 overflow-hidden rounded-full bg-slate-900 px-14 py-4 text-[11px] font-black uppercase tracking-[0.3em] text-white transition-all hover:bg-emerald-600 active:scale-95 touch-3d shadow-2xl shadow-slate-900/20"
             >
-              <span>Explore Collection</span>
+              <span>View All Products</span>
               <span className="text-lg transition-transform group-hover:translate-x-1">→</span>
             </Link>
           </div>
