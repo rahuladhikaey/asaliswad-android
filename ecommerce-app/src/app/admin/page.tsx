@@ -293,9 +293,9 @@ export default function AdminPage() {
       <main className="min-h-screen bg-slate-50 flex items-center justify-center p-4 text-slate-900 border-t-8 border-emerald-600">
         <section className="w-full max-w-lg">
           <div className="rounded-[3rem] bg-white p-10 md:p-14 premium-shadow border border-slate-100/50 flex flex-col items-center">
-            <div className="mb-10 transition-transform hover:scale-110 duration-500">
+            <div className="mb-10 transition-transform hover:scale-110 duration-500 touch-3d">
               <Link href="/">
-                <img src="/logo.png" alt="Asali Swad Admin" className="h-24 w-24 rounded-[2rem] object-cover shadow-2xl border-4 border-white" />
+                <img src="/logo.png" alt="Asali Swad Admin" className="h-24 w-24 object-contain" />
               </Link>
             </div>
 

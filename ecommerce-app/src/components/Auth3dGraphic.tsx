@@ -19,8 +19,8 @@ export default function Auth3dGraphic() {
           >
             <div className="absolute inset-x-6 top-6 h-14 rounded-3xl bg-white/90 shadow-sm" />
             <div className="absolute inset-x-6 bottom-6 h-14 rounded-3xl bg-white/90 shadow-sm" />
-            <div className="absolute left-8 top-20 flex h-20 w-20 items-center justify-center overflow-hidden rounded-full shadow-lg border-2 border-white/80 bg-white">
-              <img src="/logo.png" alt="Asali Swad" className="h-full w-full object-cover" />
+            <div className="absolute left-8 top-20 h-20 w-20 overflow-hidden rounded-full">
+              <img src="/logo.png" alt="Asali Swad" className="h-full w-full object-contain" />
             </div>
             <div className="absolute left-12 bottom-16 flex h-10 w-10 items-center justify-center rounded-full bg-white/80 shadow-md text-[10px] uppercase tracking-[0.25em] text-slate-500">
               COD

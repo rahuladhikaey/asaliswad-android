@@ -71,6 +71,28 @@
   .animate-float {
     animation: float 3s ease-in-out infinite;
   }
+
+  .touch-3d {
+    transform: translate3d(0, 0, 0);
+    transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+    will-change: transform, box-shadow, filter;
+    box-shadow: 0 24px 42px -24px rgba(15, 23, 42, 0.18);
+    backface-visibility: hidden;
+  }
+
+  .touch-3d:hover {
+    transform: translate3d(0, -0.35rem, 0);
+  }
+
+  .touch-3d:active {
+    transform: translate3d(0, 0.05rem, 0) scale(0.98);
+    box-shadow: 0 12px 20px -12px rgba(15, 23, 42, 0.24);
+  }
+
+  .touch-3d:focus-visible {
+    outline: 2px solid rgba(16, 185, 129, 0.85);
+    outline-offset: 3px;
+  }
 }
 
 @keyframes float {

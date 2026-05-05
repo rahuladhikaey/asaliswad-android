@@ -39,8 +39,8 @@ export default function ProfilePage() {
       {/* Premium Sticky Header */}
       <header className="sticky top-0 z-50 flex items-center justify-between border-b border-slate-200/60 bg-white/80 px-4 py-3 backdrop-blur-xl md:px-8">
         <div className="flex items-center gap-4">
-          <Link href="/" className="flex items-center justify-center transition-transform hover:scale-105">
-            <img src="/logo.png" alt="Asali Swad Logo" className="h-10 w-10 md:h-12 md:w-12 rounded-xl object-cover shadow-md border border-slate-100" />
+          <Link href="/" className="flex items-center justify-center transition-transform hover:scale-105 touch-3d">
+            <img src="/logo.png" alt="Asali Swad Logo" className="h-10 w-10 md:h-12 md:w-12 object-contain" />
           </Link>
           <div className="hidden flex-col md:flex">
              <span className="text-[10px] font-black uppercase tracking-widest text-emerald-600">User Profile</span>

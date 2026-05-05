@@ -30,7 +30,7 @@ export function Header({
           {!isHome && (
             <button
               onClick={() => router.back()}
-              className="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-50 text-slate-600 hover:bg-slate-100 transition-all active:scale-90"
+              className="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-50 text-slate-600 hover:bg-slate-100 transition-all touch-3d active:scale-90"
               aria-label="Go Back"
             >
               <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -39,11 +39,11 @@ export function Header({
             </button>
           )}
           
-          <Link href="/" className="flex items-center justify-center transition-transform hover:scale-105">
+          <Link href="/" className="flex items-center justify-center transition-transform hover:scale-105 touch-3d">
             <img 
               src="/logo.png" 
               alt="Asali Swad Logo" 
-              className="h-10 w-10 md:h-12 md:w-12 rounded-xl object-cover shadow-md border border-slate-100" 
+              className="h-10 w-10 md:h-12 md:w-12 object-contain" 
             />
           </Link>
           <div className="flex flex-col overflow-hidden max-w-[150px] md:max-w-none">
@@ -85,7 +85,7 @@ export function Header({
             <Link 
               key={link.name} 
               href={link.href}
-              className="text-[11px] font-black uppercase tracking-[0.2em] text-slate-500 hover:text-emerald-600 transition-all hover:-translate-y-0.5 active:scale-95"
+              className="text-[11px] font-black uppercase tracking-[0.2em] text-slate-500 hover:text-emerald-600 transition-all touch-3d active:scale-95"
             >
               {link.name}
             </Link>
@@ -118,7 +118,7 @@ export function Header({
           {/* Hamburger Menu - Tablet & Phone only (Moved to front for better index) */}
           <button
             onClick={() => setIsDrawerOpen(true)}
-            className="flex lg:hidden h-10 w-10 items-center justify-center rounded-xl bg-slate-50 text-slate-600 active:bg-slate-100 transition-all"
+            className="flex lg:hidden h-10 w-10 items-center justify-center rounded-xl bg-slate-50 text-slate-600 active:bg-slate-100 transition-all touch-3d"
             aria-label="Toggle Menu"
           >
             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">

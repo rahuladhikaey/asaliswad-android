@@ -104,9 +104,9 @@ export default function LoginPage() {
           </div>
           
           <div className="rounded-[3rem] bg-white p-8 md:p-12 premium-shadow border border-slate-100 flex flex-col items-center">
-            <div className="mb-10 transition-transform hover:scale-110 duration-500">
+            <div className="mb-10 transition-transform hover:scale-110 duration-500 touch-3d">
               <Link href="/">
-                <img src="/logo.png" alt="Asali Swad Logo" className="h-20 w-20 rounded-2xl object-cover shadow-2xl border-4 border-white" />
+                <img src="/logo.png" alt="Asali Swad Logo" className="h-20 w-20 object-contain" />
               </Link>
             </div>
             

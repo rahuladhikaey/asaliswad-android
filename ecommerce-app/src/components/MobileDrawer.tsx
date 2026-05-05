@@ -53,7 +53,7 @@ export function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
           {/* Header */}
           <div className="flex items-center justify-between border-b border-slate-100 p-6">
             <div className="flex items-center gap-3">
-              <img src="/logo.png" alt="Logo" className="h-8 w-8 rounded-lg object-cover" />
+              <img src="/logo.png" alt="Logo" className="h-8 w-8 object-contain" />
               <span className="text-lg font-black text-slate-900">Menu</span>
             </div>
             <button

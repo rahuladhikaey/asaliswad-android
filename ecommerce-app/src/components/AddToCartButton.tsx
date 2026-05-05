@@ -49,7 +49,7 @@ export function AddToCartButton({ product, className }: { product: Product; clas
     <button
       type="button"
       onClick={handleAdd}
-      className={className || "flex h-11 w-24 items-center justify-center rounded-xl border-2 border-emerald-600 bg-emerald-50/50 text-sm font-bold uppercase text-emerald-700 shadow-sm transition-all hover:bg-emerald-600 hover:text-white active:scale-95"}
+      className={className || "flex h-11 w-24 items-center justify-center rounded-xl border-2 border-emerald-600 bg-emerald-50/50 text-sm font-bold uppercase text-emerald-700 shadow-sm transition-all hover:bg-emerald-600 hover:text-white active:scale-95 touch-3d"}
     >
       ADD
     </button>

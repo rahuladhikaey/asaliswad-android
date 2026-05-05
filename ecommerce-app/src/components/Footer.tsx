@@ -10,8 +10,8 @@ export function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-4">
             <Link href="/" className="inline-flex items-center gap-4 transition-transform hover:scale-105">
-              <span className="relative h-14 w-14 overflow-hidden rounded-[1.25rem] bg-white border border-slate-100 shadow-md">
-                <Image src="/logo.png" alt="Asali Swad logo" fill className="object-cover" />
+              <span className="relative h-14 w-14 overflow-hidden rounded-[1.25rem]">
+                <Image src="/logo.png" alt="Asali Swad logo" fill className="object-contain" />
               </span>
               <div className="flex flex-col">
                 <span className="text-xl font-black tracking-tight text-white">Asali Swad</span>
