@@ -2,7 +2,6 @@
 
 import { useState, useRef, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import Image from "next/image";
 
 export default function ProductImageCarousel({
   images,
@@ -129,20 +128,33 @@ export default function ProductImageCarousel({
           className="flex transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]"
           style={{ transform: `translateX(${currentIndex * -100}%)` }}
         >
-          {images.map((img, idx) => (
-            <div key={idx} className="flex-none w-full p-2 flex items-center justify-center">
-              <div className="relative overflow-hidden rounded-[2.5rem] bg-white aspect-square group shadow-sm border border-slate-100 flex items-center justify-center">
-                <Image
-                  src={img}
-                  alt={`${productName} - View ${idx + 1}`}
-                  fill
-                  className="object-contain p-2 transition-transform duration-700 group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
-                  priority={idx === 0}
+          {images && images.length > 0 ? (
+            images.map((img, idx) => (
+              <div key={idx} className="flex-none w-full p-2 flex items-center justify-center">
+                <div className="relative overflow-hidden rounded-[2.5rem] bg-white aspect-square w-full shadow-sm border border-slate-100 flex items-center justify-center">
+                  <img
+                    src={img || "/placeholder.png"}
+                    alt={`${productName} - View ${idx + 1}`}
+                    className="h-full w-full object-contain p-2 transition-transform duration-700 group-hover:scale-105"
+                    loading={idx === 0 ? "eager" : "lazy"}
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = "https://via.placeholder.com/600x600?text=No+Image";
+                    }}
+                  />
+                </div>
+              </div>
+            ))
+          ) : (
+            <div className="flex-none w-full p-2 flex items-center justify-center">
+              <div className="relative overflow-hidden rounded-[2.5rem] bg-white aspect-square w-full shadow-sm border border-slate-100 flex items-center justify-center">
+                <img
+                  src="https://via.placeholder.com/600x600?text=No+Image"
+                  alt="No image available"
+                  className="h-full w-full object-contain p-8"
                 />
               </div>
             </div>
-          ))}
+          )}
         </div>
       </div>
 

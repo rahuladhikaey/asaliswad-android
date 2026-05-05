@@ -22,7 +22,7 @@ export function BuyNowButton({ product, className }: { product: Product, classNa
       addToCart(product, 1);
     }
     
-    router.push("/checkout");
+    router.push(`/checkout?buyNow=${product.id}`);
   };
 
 

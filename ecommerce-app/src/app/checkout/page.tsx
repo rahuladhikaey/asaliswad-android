@@ -14,7 +14,7 @@ function CheckoutContent() {
   const searchParams = useSearchParams();
   const initialMethod = searchParams.get("method")?.toUpperCase() === "COD" ? "COD" : "ONLINE";
 
-  const { cart, totalValue, clearCart } = useCart();
+  const { cart, totalValue, clearCart, removeFromCart } = useCart();
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [village, setVillage] = useState("");
@@ -26,6 +26,16 @@ function CheckoutContent() {
   const [isCheckingAuth, setIsCheckingAuth] = useState(true);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [paymentMethod, setPaymentMethod] = useState<"ONLINE" | "COD">(initialMethod);
+
+  // Buy Now Logic: Filter cart if buyNow param exists
+  const buyNowId = searchParams.get("buyNow");
+  const effectiveCart = buyNowId 
+    ? cart.filter(item => item.id.toString() === buyNowId)
+    : cart;
+  
+  const effectiveTotal = buyNowId
+    ? effectiveCart.reduce((sum, item) => sum + (item.price * item.quantity), 0)
+    : totalValue;
 
   const loadRazorpay = () => {
     return new Promise((resolve) => {
@@ -45,7 +55,7 @@ function CheckoutContent() {
       return;
     }
 
-    if (!cart.length) {
+    if (!effectiveCart.length) {
       setMessage("Your cart is empty. Add products before checking out.");
       return;
     }
@@ -66,15 +76,19 @@ function CheckoutContent() {
             customer_name: name,
             phone: phone,
             address: fullAddress,
-            items: cart,
-            total: totalValue,
+            items: effectiveCart,
+            total: effectiveTotal,
             user_id: userId,
           }),
         });
 
         const data = await response.json();
         if (data.success) {
-          clearCart();
+          if (buyNowId) {
+            removeFromCart(Number(buyNowId));
+          } else {
+            clearCart();
+          }
           router.push(`/order-success?order_id=${data.orderId}`);
         } else {
           setMessage(data.error ? `Could not place COD order: ${data.error}` : "Could not place COD order. Please try again.");
@@ -91,7 +105,7 @@ function CheckoutContent() {
         const response = await fetch("/api/checkout/create-order", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ amount: totalValue }),
+          body: JSON.stringify({ amount: effectiveTotal }),
         });
 
         let orderData;
@@ -129,15 +143,19 @@ function CheckoutContent() {
                   customer_name: name,
                   phone: phone,
                   address: fullAddress,
-                  items: cart,
-                  total: totalValue,
+                  items: effectiveCart,
+                  total: effectiveTotal,
                   user_id: userId,
                 }),
               });
 
               const verifyData = await verifyRes.json();
               if (verifyData.success) {
-                clearCart();
+                if (buyNowId) {
+                  removeFromCart(Number(buyNowId));
+                } else {
+                  clearCart();
+                }
                 router.push(`/order-success?order_id=${verifyData.orderId}`);
               } else {
                 setMessage("Payment verification failed. Please contact support.");
@@ -367,7 +385,7 @@ function CheckoutContent() {
             <div className="rounded-[2.5rem] bg-slate-900 p-8 text-white premium-shadow">
               <h3 className="text-xs font-black uppercase tracking-[0.2em] text-emerald-400 mb-6">Order Summary</h3>
               <div className="space-y-4 max-h-60 no-scrollbar overflow-y-auto pr-2">
-                {cart.map((item) => (
+                {effectiveCart.map((item) => (
                   <div key={item.id} className="flex items-center justify-between text-sm">
                     <span className="font-bold text-slate-100 line-clamp-1 flex-1 pr-4">{item.name} <span className="text-slate-500 px-2 italic font-medium">x{item.quantity}</span></span>
                     <span className="font-black">₹{item.price * item.quantity}</span>
@@ -377,7 +395,7 @@ function CheckoutContent() {
               <div className="mt-8 border-t border-slate-800 pt-6">
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">Total Pay</span>
-                  <span className="text-2xl font-black text-emerald-400">₹{totalValue}</span>
+                  <span className="text-2xl font-black text-emerald-400">₹{effectiveTotal}</span>
                 </div>
                 <div className="mt-4 flex items-center gap-2 rounded-xl bg-slate-800/50 p-3">
                   <span className="text-lg">🚚</span>

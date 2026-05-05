@@ -31,7 +31,7 @@ export default function ProductDetailTemplate({
           <div className="lg:col-span-7 lg:sticky lg:top-24">
             <div className="flex flex-col gap-6">
               {/* Image Carousel with Slide Controls */}
-              <div className="relative group">
+              <div className="relative group min-h-[300px] sm:min-h-0">
                 <ProductImageCarousel images={images} productName={product.name} />
                 {/* Wishlist Button - Overlaid on image for mobile, better placement */}
                 <div className="absolute top-6 right-6 z-30">
